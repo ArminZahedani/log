@@ -2,7 +2,7 @@
 Log input commands that have been executed to a file.
 
 # Description
-A simple script with the intend to log commands that have been inputted by the user. The commands are only appended to the output file if the exit code is 0, which shows that it was successful. The script allows you to specify a list of commands that should not be logged. Furthermore, the output file name can also be specified.
+A simple script with the intend to run commands inputted and log them. The commands are only appended to the output file if the exit code is 0, which shows that it was successful. The script allows you to specify a list of commands that should not be logged. Furthermore, the output file name can also be specified.
 
 # When to use
 Whenever you need to setup something by e.g. installing packages repeatedly. This allows you to understand exactly what you have done (and of course manually change steps that are redundant).
@@ -14,4 +14,9 @@ Whenever you need to setup something by e.g. installing packages repeatedly. Thi
 The line 'echo "This is a useless script." ' will then be appended to the output script file.
 
 # Note
-Do not use this script with sensitive information such as passwords.
+Do not use this script with sensitive information such as passwords. Of course one can e.g. create an alias for this script for example:
+```
+alias log='log.sh'
+log echo "This is still a useless script."
+```
+>This is still a useless script.
