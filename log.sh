@@ -2,7 +2,6 @@
 
 not_logged="nano vi vim"    #user configurable commands that should not be logged.
 file_name="commands.sh"     #user configurable file name where commands that are logged should be saved to.
-touch $file_name
 
 sentinel=0
 for w in $not_logged
@@ -16,7 +15,7 @@ done
 
 $@
 exit_code=$?
-
+touch $file_name
 if [ "$sentinel" == 0 ] && [ "$exit_code" == 0 ]
 then
     echo $@ >> $file_name
